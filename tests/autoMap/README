@@ -1,0 +1,54 @@
+AutoMap Testing
+===============
+
+Copyright 2018 Pieter du Preez <pdupreez@gmail.com>
+
+This file is part of Mozzi.
+
+Mozzi is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+
+
+Building
+--------
+	make
+
+Testing
+-------
+	./test_autoMap
+
+The following output was generated while testing against commit 693dd799:
+
+Instantiating AutoMap with (10,70,10,70)
+for n = -20     AutoMap::next map(-20,-20,10,10,70) =   10      vs.     -20     from main map(-20,10,70,10,70)
+for n = -10     AutoMap::next map(-10,-20,10,10,70) =   30      vs.     -10     from main map(-10,10,70,10,70)
+for n = 0       AutoMap::next map(0,-20,10,10,70) =     50      vs.     0       from main map(0,10,70,10,70)
+for n = 10      AutoMap::next map(10,-20,10,10,70) =    70      vs.     10      from main map(10,10,70,10,70)
+for n = 20      AutoMap::next map(20,-20,20,10,70) =    70      vs.     20      from main map(20,10,70,10,70)
+for n = 30      AutoMap::next map(30,-20,30,10,70) =    70      vs.     30      from main map(30,10,70,10,70)
+for n = 40      AutoMap::next map(40,-20,40,10,70) =    70      vs.     40      from main map(40,10,70,10,70)
+for n = 50      AutoMap::next map(50,-20,50,10,70) =    70      vs.     50      from main map(50,10,70,10,70)
+for n = 60      AutoMap::next map(60,-20,60,10,70) =    70      vs.     60      from main map(60,10,70,10,70)
+for n = 70      AutoMap::next map(70,-20,70,10,70) =    70      vs.     70      from main map(70,10,70,10,70)
+for n = 80      AutoMap::next map(80,-20,80,10,70) =    70      vs.     80      from main map(80,10,70,10,70)
+for n = 90      AutoMap::next map(90,-20,90,10,70) =    70      vs.     90      from main map(90,10,70,10,70)
+for n = 100     AutoMap::next map(100,-20,100,10,70) =  70      vs.     100     from main map(100,10,70,10,70)
+for n = 90      AutoMap::next map(90,-20,100,10,70) =   65      vs.     90      from main map(90,10,70,10,70)
+for n = 80      AutoMap::next map(80,-20,100,10,70) =   60      vs.     80      from main map(80,10,70,10,70)
+for n = 70      AutoMap::next map(70,-20,100,10,70) =   55      vs.     70      from main map(70,10,70,10,70)
+for n = 60      AutoMap::next map(60,-20,100,10,70) =   50      vs.     60      from main map(60,10,70,10,70)
+for n = 50      AutoMap::next map(50,-20,100,10,70) =   45      vs.     50      from main map(50,10,70,10,70)
+for n = 40      AutoMap::next map(40,-20,100,10,70) =   40      vs.     40      from main map(40,10,70,10,70)
+for n = 30      AutoMap::next map(30,-20,100,10,70) =   35      vs.     30      from main map(30,10,70,10,70)
+for n = 20      AutoMap::next map(20,-20,100,10,70) =   30      vs.     20      from main map(20,10,70,10,70)
+for n = 10      AutoMap::next map(10,-20,100,10,70) =   25      vs.     10      from main map(10,10,70,10,70)
+for n = 0       AutoMap::next map(0,-20,100,10,70) =    20      vs.     0       from main map(0,10,70,10,70)
+for n = -10     AutoMap::next map(-10,-20,100,10,70) =  15      vs.     -10     from main map(-10,10,70,10,70)
+for n = -20     AutoMap::next map(-20,-20,100,10,70) =  10      vs.     -20     from main map(-20,10,70,10,70)
+for n = -30     AutoMap::next map(-30,-30,100,10,70) =  10      vs.     -30     from main map(-30,10,70,10,70)
+for n = -40     AutoMap::next map(-40,-40,100,10,70) =  10      vs.     -40     from main map(-40,10,70,10,70)
+
+One can clearly see that the AutoMap template does not return consistent values.
+
+eg.
+for n = 20  AutoMap::next map(20,-20,70,10,70) =    36
+for n =	20	AutoMap::next map(20,-20,100,10,70) = 	30

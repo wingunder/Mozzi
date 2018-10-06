@@ -47,6 +47,10 @@ public:
 	int next(int n)
   {
 		inherited::next(n);
+#ifdef TESTING_AUTOMAP
+		const int ret = map(n,inherited::getMin(),inherited::getMax(),map_min,map_max);
+		std::cout << "for n =\t" << n << "\tAutoMap::next map(" << n << "," << inherited::getMin() << "," << inherited::getMax() << "," << map_min << "," << map_max << ") = \t" << ret;
+#endif
 		return map(n,inherited::getMin(),inherited::getMax(),map_min,map_max);
 	}
 
