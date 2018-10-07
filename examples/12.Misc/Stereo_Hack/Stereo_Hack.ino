@@ -12,6 +12,8 @@
  *  This example code is in the public domain.
  */
 
+#define STEREO_HACK true
+
 #include <MozziGuts.h>
 #include <Phasor.h> // for controlling panning position
 #include <Oscil.h> // oscil for audio sig

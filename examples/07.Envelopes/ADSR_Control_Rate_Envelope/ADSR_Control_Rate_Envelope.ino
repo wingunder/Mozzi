@@ -11,6 +11,8 @@
     Tim Barrass 2013-14, CC by-nc-sa.
 */
 
+#define CONTROL_RATE 100 // faster than usual to help smooth CONTROL_RATE adsr interpolation (next())
+
 #include <MozziGuts.h>
 #include <Oscil.h>
 #include <EventDelay.h>
@@ -18,8 +20,6 @@
 #include <tables/sin8192_int8.h>
 #include <mozzi_rand.h>
 #include <mozzi_midi.h>
-
-#define CONTROL_RATE 100 // faster than usual to help smooth CONTROL_RATE adsr interpolation (next())
 
 Oscil <8192, AUDIO_RATE> aOscil(SIN8192_DATA);;
 

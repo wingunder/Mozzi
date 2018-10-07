@@ -87,7 +87,9 @@ variables audio_signal_1 and audio_signal_2 to be set in updateAudio(),
 instead of returning a single audio value as is usual for standard mono.
 You need to have \#define STEREO_HACK true in mozzi_config.h
 */
+#ifndef STEREO_HACK
 #define STEREO_HACK false
+#endif
 
 
 /**

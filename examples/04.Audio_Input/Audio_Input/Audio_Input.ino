@@ -18,6 +18,9 @@
   Tim Barrass 2013, CC by-nc-sa.
 */
 
+#define USE_AUDIO_INPUT true
+#define AUDIO_INPUT_PIN 0
+
 #include <MozziGuts.h>
 
 void setup(){

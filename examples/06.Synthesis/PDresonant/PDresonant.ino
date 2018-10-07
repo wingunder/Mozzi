@@ -70,6 +70,7 @@ void setup(){
 
 }
 
+void stopNote(byte channel, byte pitch, byte velocity);
 
 void HandleNoteOn(byte channel, byte pitch, byte velocity){
   if (velocity > 0)

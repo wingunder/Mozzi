@@ -17,13 +17,13 @@
     Tim Barrass 2012, CC by-nc-sa.
 */
 
+#define CONTROL_RATE 100
+
 #include <MozziGuts.h>
 #include <Sample.h> // Sample template
 #include <samples/abomb16384_int8.h> // table for Sample
 #include <EventDelay.h>
 #include <mozzi_rand.h>
-
-#define CONTROL_RATE 100
 
 // use: Sample <table_size, update_rate> SampleName (wavetable)
 Sample <ABOMB_NUM_CELLS, AUDIO_RATE> aSample(ABOMB_DATA);

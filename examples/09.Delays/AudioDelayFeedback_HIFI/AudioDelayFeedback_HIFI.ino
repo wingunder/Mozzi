@@ -44,14 +44,14 @@
     Tim Barrass 2012-13, CC by-nc-sa.
 */
 
+#define CONTROL_RATE 100 // Hz
+
 #include <MozziGuts.h>
 #include <Oscil.h>
 #include <tables/triangle_analogue512_int8.h> // wavetable
 #include <tables/triangle512_int8.h> // wavetable
 #include <AudioDelayFeedback.h>
 #include <mozzi_midi.h> // for mtof
-
-#define CONTROL_RATE 100 // Hz
 
 Oscil<TRIANGLE_ANALOGUE512_NUM_CELLS, AUDIO_RATE> aTriangle(TRIANGLE_ANALOGUE512_DATA); // audio oscillator
 Oscil<TRIANGLE512_NUM_CELLS, CONTROL_RATE> kDelSamps(TRIANGLE512_DATA); // for modulating delay time, measured in audio samples

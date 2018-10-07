@@ -22,6 +22,8 @@
     Tim Barrass 2013, CC by-nc-sa.
 */
 
+#define CONTROL_RATE 50 // Hz
+
 #include <MozziGuts.h>
 #include <Oscil.h>
 #include <tables/sin2048_int8.h> // sine table for oscillator
@@ -29,8 +31,6 @@
 #include <Line.h>
 #include <Smooth.h>
 #include <mozzi_analog.h>
-
-#define CONTROL_RATE 50 // Hz
 
 // 2 oscillators to compare linear interpolated vs smoothed control
 Oscil <SIN2048_NUM_CELLS, AUDIO_RATE> aSin0(SIN2048_DATA);

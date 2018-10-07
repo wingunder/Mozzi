@@ -23,13 +23,13 @@
    Tim Barrass 2013, CC by-nc-sa.
 */
 
+// increase the rate of updateControl from the default of 50, to catch the piezo's rapid transients
+#define CONTROL_RATE 150
+
 #include <MozziGuts.h>
 #include <Oscil.h> // oscillator
 #include <tables/sin2048_int8.h> // table for Oscils to play
 #include <Smooth.h>
-
-// increase the rate of updateControl from the default of 50, to catch the piezo's rapid transients
-#define CONTROL_RATE 150
 
 const int PIEZO_PIN = 3;  // set the analog input pin for the piezo
 

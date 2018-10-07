@@ -17,6 +17,8 @@
     Tim Barrass 2012, CC by-nc-sa.
 */
 
+#define CONTROL_RATE 50 // Hz
+
 #include <MozziGuts.h>
 #include <Oscil.h>
 #include <tables/cos2048_int8.h> // table for Oscils to play
@@ -24,8 +26,6 @@
 #include <EventDelay.h>
 #include <mozzi_rand.h>
 #include <mozzi_midi.h>
-
-#define CONTROL_RATE 50 // Hz
 
 // audio oscils
 Oscil<COS2048_NUM_CELLS, AUDIO_RATE> aCarrier(COS2048_DATA);

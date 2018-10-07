@@ -19,6 +19,8 @@
     Tim Barrass 2013, CC by-nc-sa.
 */
 
+#define CONTROL_RATE 500 // quite fast, keeps modulation smooth
+
 #include <MozziGuts.h>
 #include <ReverbTank.h>
 #include <Oscil.h>
@@ -26,8 +28,6 @@
 #include <tables/envelop2048_uint8.h>
 
 ReverbTank reverb;
-
-#define CONTROL_RATE 500 // quite fast, keeps modulation smooth
 
 // Synth from PhaseMod_Envelope example
 Oscil <COS8192_NUM_CELLS, AUDIO_RATE> aCarrier(COS8192_DATA);

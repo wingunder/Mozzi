@@ -13,14 +13,14 @@
     Tim Barrass 2012, CC by-nc-sa.
 */
 
+#define CONTROL_RATE 250 // Hz
+
 #include <MozziGuts.h>
 #include <Oscil.h>
 #include <tables/triangle_analogue512_int8.h> // wavetable
 #include <tables/cos2048_int8.h> // wavetable
 #include <AudioDelay.h>
 #include <mozzi_midi.h> // for mtof
-
-#define CONTROL_RATE 250 // Hz
 
 Oscil<TRIANGLE_ANALOGUE512_NUM_CELLS, AUDIO_RATE> aTriangle(TRIANGLE_ANALOGUE512_DATA);
 Oscil<COS2048_NUM_CELLS, CONTROL_RATE> kFreq(COS2048_DATA);

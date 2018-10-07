@@ -13,15 +13,15 @@
     Tim Barrass 2012, CC by-nc-sa.
 */
 
+// this is a high value to avoid zipper noise
+#define CONTROL_RATE 1000
+
 #include <MozziGuts.h>
 #include <Oscil.h> // oscillator template
 #include <tables/sin2048_int8.h> // sine table for oscillator
 #include <EventDelay.h>
 #include <Smooth.h>
 #include <mozzi_midi.h>
-
-// this is a high value to avoid zipper noise
-#define CONTROL_RATE 1000
 
 // use: Oscil <table_size, update_rate> oscilName (wavetable), look in .h file of table #included above
 Oscil <SIN2048_NUM_CELLS, AUDIO_RATE> aSin(SIN2048_DATA);

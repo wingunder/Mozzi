@@ -11,12 +11,12 @@
     Tim Barrass 2012, CC by-nc-sa.
 */
 
+#define CONTROL_RATE 500 // quite fast, keeps modulation smooth
+
 #include <MozziGuts.h>
 #include <Oscil.h>
 #include <tables/cos8192_int8.h>
 #include <tables/envelop2048_uint8.h>
-
-#define CONTROL_RATE 500 // quite fast, keeps modulation smooth
 
 // use: Oscil <table_size, update_rate> oscilName (wavetable), look in .h file of table #included above
 Oscil <COS8192_NUM_CELLS, AUDIO_RATE> aCarrier(COS8192_DATA);

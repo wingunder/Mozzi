@@ -22,13 +22,13 @@
     Tim Barrass 2012, CC by-nc-sa.
 */
 
+#define CONTROL_RATE 50 // Hz
+
 #include <MozziGuts.h>
 #include <Line.h> // for smooth transitions
 #include <Oscil.h> // oscillator template
 #include <tables/triangle_warm8192_int8.h> // triangle table for oscillator
 #include <mozzi_midi.h>
-
-#define CONTROL_RATE 50 // Hz
 
 // use: Oscil <table_size, update_rate> oscilName (wavetable), look in .h file of table #included above
 Oscil <TRIANGLE_WARM8192_NUM_CELLS, AUDIO_RATE> aTriangle(TRIANGLE_WARM8192_DATA);

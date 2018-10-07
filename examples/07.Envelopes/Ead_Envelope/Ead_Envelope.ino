@@ -13,14 +13,14 @@
 		Tim Barrass 2012, CC by-nc-sa
  */
 
+#define CONTROL_RATE 250 // Hz
+
 #include <MozziGuts.h>
 #include <Oscil.h> // oscillator template
 #include <tables/brownnoise8192_int8.h> // recorded audio wavetable
 #include <Ead.h> // exponential attack decay
 #include <EventDelay.h>
 #include <mozzi_rand.h>
-
-#define CONTROL_RATE 250 // Hz
 
 Oscil<BROWNNOISE8192_NUM_CELLS, AUDIO_RATE> aNoise(BROWNNOISE8192_DATA);
 EventDelay kDelay; // for triggering envelope start

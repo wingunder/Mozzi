@@ -22,6 +22,8 @@
 		Tim Barrass 2013, CC by-nc-sa.
 */
 
+#define CONTROL_RATE 50
+
 #include <MozziGuts.h>
 #include <Oscil.h> // oscillator template
 #include <tables/sin2048_int8.h> // sine table for oscillator
@@ -29,7 +31,6 @@
 #include <ControlDelay.h>
 
 #define INPUT_PIN 0 // analog control input
-#define CONTROL_RATE 50
 
 unsigned int echo_cells_1 = 32;
 unsigned int echo_cells_2 = 60;

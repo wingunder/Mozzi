@@ -161,8 +161,8 @@ void updateControl(){
 
 
 int updateAudio(){
-  return ((long)envelope0.next() * aOscil0.next()) +
-    ((int)envelope1.next() * aOscil1.next())
+  return (((long)envelope0.next() * aOscil0.next()) +
+    ((int)envelope1.next() * aOscil1.next()))
     >>9;
 }
 

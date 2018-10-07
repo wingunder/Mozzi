@@ -18,14 +18,14 @@
     Tim Barrass 2012, CC by-nc-sa.
 */
 
+#define CONTROL_RATE 50 // Hz
+
 #include <MozziGuts.h>
 #include <Oscil.h>
 #include <tables/triangle_valve_2048_int8.h>
 #include <tables/sin2048_int8.h>
 #include <Line.h>
 #include <mozzi_midi.h>
-
-#define CONTROL_RATE 50 // Hz
 
 // audio oscillator
 Oscil<TRIANGLE_VALVE_2048_NUM_CELLS, AUDIO_RATE> aSig(TRIANGLE_VALVE_2048_DATA);

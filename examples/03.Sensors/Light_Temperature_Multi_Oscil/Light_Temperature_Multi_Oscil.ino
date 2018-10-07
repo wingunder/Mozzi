@@ -26,12 +26,12 @@
   Tim Barrass 2013, CC by-nc-sa.
 */
 
+#define CONTROL_RATE 250
+
 #include <MozziGuts.h>
 #include <Oscil.h>
 #include <tables/cos8192_int8.h>
 #include <mozzi_midi.h>
-
-#define CONTROL_RATE 250
 
 #define THERMISTOR_PIN 1
 #define LDR_PIN 2
@@ -89,7 +89,6 @@ int temperatureToFreq(char oscil_num, int temperature){
 
 
 void updateControl(){
-  static float previous_pulse_freq;
 
   // read analog inputs
   int temperature = mozziAnalogRead(THERMISTOR_PIN); // not calibrated to degrees!
@@ -97,7 +96,6 @@ void updateControl(){
 
   // map light reading to volume pulse frequency
   float pulse_freq = (float)light/256;
-  previous_pulse_freq = pulse_freq;
 
   v0 = kVol0.next();
   v1 = kVol1.next();

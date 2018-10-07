@@ -35,12 +35,13 @@ sPin ---\/\/\/-----.
 
  */
 
+#define CONTROL_RATE 128 // Hz
+
 #include <MozziGuts.h>
 #include <Oscil.h>
 #include <tables/sin2048_int8.h> // sine table for oscillator
 #include <RCpoll.h>
 
-#define CONTROL_RATE 128 // Hz
 #define SENSOR_PIN 4            // digital pin for sensor input
 
 Oscil <SIN2048_NUM_CELLS, AUDIO_RATE> aSin(SIN2048_DATA);

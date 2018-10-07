@@ -12,6 +12,8 @@
     This example code is in the public domain.
 */
 
+#define STEREO_HACK true
+
 #include <MozziGuts.h>
 #include <Oscil.h> // oscil for audio sig
 #include <tables/pinknoise8192_int8.h> // table for audio oscillator

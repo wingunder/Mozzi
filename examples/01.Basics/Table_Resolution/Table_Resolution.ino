@@ -14,6 +14,8 @@
 	 Tim Barrass 2012, CC by-nc-sa.
 */
 
+#define CONTROL_RATE 50
+
 #include <MozziGuts.h>
 #include <Oscil.h>
 #include <tables/sin256_int8.h>
@@ -24,8 +26,6 @@
 #include <tables/sin8192_int8.h>
 #include <EventDelay.h> // for scheduling events
 #include <Line.h>
-
-#define CONTROL_RATE 50
 
 // use: Oscil <table_size, update_rate> oscilName (wavetable), look in .h file of table #included above
 Oscil <SIN256_NUM_CELLS, AUDIO_RATE> aSin0(SIN256_DATA); // can hear significant aliasing noise

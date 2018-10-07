@@ -17,13 +17,13 @@
     This example code is in the public domain.
 */
 
+#define CONTROL_RATE 100 // Hz
+
 #include <MozziGuts.h>
 #include <Oscil.h> // oscillator template
 #include <Ead.h> // exponential attack decay
 #include <tables/sin2048_int8.h> // sine table for oscillator
 #include <twi_nonblock.h>
-
-#define CONTROL_RATE 100 // Hz
 
 // use: Oscil <table_size, update_rate> oscilName (wavetable), look in .h file of table #included above
 Oscil <SIN2048_NUM_CELLS, AUDIO_RATE> aSin(SIN2048_DATA);
@@ -49,6 +49,8 @@ static volatile byte acc_status = 0;
 #define ACC_WRITING 2
 
 byte accbytedata[6];
+
+void acc_writeTo(byte address, byte val);
 
 void setup_accelero(){
   initialize_twi_nonblock();
