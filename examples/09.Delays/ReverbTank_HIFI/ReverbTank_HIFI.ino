@@ -62,11 +62,10 @@ void updateControl(){
 int updateAudio(){
   int synth = aCarrier.phMod((int)aModulator.next()*(150u+aModWidth.next()));
   synth *= (byte)aEnvelop.next();
-  synth >>= 8;
   // here's the reverb
-  int arev = reverb.next(synth);
-  // add the dry and wet signals
-  return synth + (arev>>3);
+  int arev = reverb.next(synth>>8); // >>8 avoids clipping
+  // experiment to adjust levels of the dry and wet signals
+  return (synth+(arev<<4))>>2;
 }
 
 
