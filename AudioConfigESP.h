@@ -1,7 +1,7 @@
 #ifndef AUDIOCONFIGESP_H
 #define AUDIOCONFIGESP_H
 
-#if not IS_ESP8266()
+#if not (IS_ESP8266() || IS_ESP32())
 #error This header should be included for ESP architecture, only
 #endif
 

@@ -7,6 +7,7 @@
  #include "WProgram.h"
 #endif
 
+#include <stdint.h>
 
 unsigned long xorshift96();
 

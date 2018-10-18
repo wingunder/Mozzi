@@ -10,7 +10,6 @@
  */
 
 
-#include "mozzi_config.h"
 #include "mozzi_analog.h"
 #include "Stack.h"
 
@@ -137,8 +136,8 @@ uint8_t adcPinToChannelNum(uint8_t pin) {
 
 
 // assumes channel is correct, not pin number, pin number would be converted first with adcPinToChannelNum
-static void adcSetChannel(uint8_t channel) {
 #if IS_AVR()
+static void adcSetChannel(uint8_t channel) {
 #if defined(__AVR_ATmega32U4__)
 	ADCSRB = (ADCSRB & ~(1 << MUX5)) | (((channel >> 3) & 0x01) << MUX5);
 #elif defined(ADCSRB) && defined(MUX5)
@@ -158,10 +157,10 @@ static void adcSetChannel(uint8_t channel) {
 	ADMUX = (analog_reference << 6) | (channel & 0x07);
 #endif
 #endif
+}
 #else
 // For other platforms ADC library converts pin/channel each time in startSingleRead
 #endif
-}
 
 
 

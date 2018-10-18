@@ -18,6 +18,8 @@
  #include "WProgram.h"
 #endif
 
+#include <stdint.h>
+
 /**@ingroup fixmath
 @{
 */

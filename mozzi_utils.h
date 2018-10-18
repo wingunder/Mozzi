@@ -9,7 +9,10 @@
  #include "WProgram.h"
 #endif
 
+#include <stdint.h>
 #include "hardware_defines.h"
+
+#ifndef __xtensa__
 
 // macros for setting and clearing register bits
 #ifndef cbi
@@ -58,6 +61,7 @@ void setPin13Low()
 #endif
 }
 
+#endif /* !__xtensa__ */
 
 long trailingZeros(unsigned long v);
 unsigned int BPMtoMillis(float bpm);

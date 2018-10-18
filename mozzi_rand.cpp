@@ -7,6 +7,11 @@
 extern STM32ADC adc;
 #elif IS_ESP8266()
 #include <esp8266_peri.h>
+#elif IS_ESP32()
+#include <esp_system.h>
+#ifndef lowByte
+#define lowByte(w) ((w) & 0xff)
+#endif
 #endif
 
 // moved these out of xorshift96() so xorshift96() can be reseeded manually
@@ -144,6 +149,10 @@ void randSeed() {
 	x = RANDOM_REG32;
 	y = random (0xFFFFFFFF) ^ RANDOM_REG32;
 	z = random (0xFFFFFFFF) ^ RANDOM_REG32;
+#elif IS_ESP32()
+	x = esp_random();
+	y = esp_random() ^ x;
+	z = esp_random() ^ y;
 #else
 #warning Automatic random seeding not implemented on this platform
 #endif

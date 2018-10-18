@@ -18,6 +18,8 @@
  #include "WProgram.h"
 #endif
 
+#include <stdint.h>
+
 #if (USE_AUDIO_INPUT==true)
 #warning "Using AUDIO_INPUT_PIN defined in mozzi_config.h for audio input."
 #endif

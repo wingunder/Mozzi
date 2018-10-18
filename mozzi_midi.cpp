@@ -1,5 +1,9 @@
 #include "mozzi_midi.h"
 
+#ifdef __xtensa__
+#include <math.h>
+#endif
+
 /** @ingroup midi
 Converts midi note number to frequency. Caution: this can take up to 400
 microseconds to run. It can seriously mess up the audio output if you use it in

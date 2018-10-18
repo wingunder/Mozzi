@@ -18,9 +18,6 @@
 
 #include "CircularBuffer.h"
 #include "MozziGuts.h"
-#include "mozzi_analog.h"
-#include "mozzi_config.h" // at the top of all MozziGuts and analog files
-//#include "mozzi_utils.h"
 
 #if IS_AVR()
 #include "FrequencyTimer2.h"
@@ -407,6 +404,8 @@ void audioHook() // 2us excluding updateAudio()
     // esp. since i2s output already has output rate control -> no need for a
     // separate output timer
     espWriteAudioToBuffer();
+#elif IS_ESP32()
+    // Do nothing. You should use the Mozzi_ESP32 class.
 #else
 #if (STEREO_HACK == true)
     updateAudio(); // in hacked version, this returns void
@@ -795,6 +794,8 @@ void stopMozzi() {
                          // but probably not needed, anyway
 #endif
 #elif IS_SAMD21()
+#elif IS_ESP32()
+  // Do nothing. You should use the Mozzi_ESP32 class.
 #else
 
   noInterrupts();
@@ -826,8 +827,8 @@ void stopMozzi() {
   TIMSK4 = pre_mozzi_TIMSK4;
 #endif
 #endif
-#endif
   interrupts();
+#endif
 }
 
 unsigned long audioTicks() {
